@@ -134,7 +134,6 @@ class BSPPeer:
     # TODO counter!
 
     def runSetup(self):
-        self.log("Starting setup!")
         line = readLine()
         # start code is the first
         if line.startswith(bp.getProtocolString(bp.RUN_SETUP)):
@@ -142,7 +141,6 @@ class BSPPeer:
             self.ack(bp.RUN_SETUP)
 
     def runBSP(self):
-        self.log("Starting BSP!")
         line = readLine()
         # start code is the first
         if line.startswith(bp.getProtocolString(bp.RUN_BSP)):
@@ -150,7 +148,6 @@ class BSPPeer:
             self.ack(bp.RUN_BSP)
 
     def runCleanup(self):
-        self.log("Starting cleanup!")
         line = readLine()
         # start code is the first
         if line.startswith(bp.getProtocolString(bp.RUN_CLEANUP)):

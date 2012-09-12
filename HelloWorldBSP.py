@@ -15,6 +15,6 @@ class HelloWorldBSP(BSP):
                 peer.send(otherPeer, ("Hello from " + name + " in superstep " + str(i)))
             peer.sync()
             for msg in peer.getAllMessages():
-                peer.log(msg)
+                peer.write(msg,"")
 
 
