@@ -34,13 +34,9 @@ class BinaryProtocol:
 
     @staticmethod
     def getProtocolString(opCode):
-        return "%" + str(opCode) + "%=\n";
-
-    @staticmethod
-    def getProtocolStringNL(opCode):
         return "%" + str(opCode) + "%=";
 
     @staticmethod
     def getAckProtocolString(opCode):
-        return "%ACK_" + str(opCode) + "%=\n";
+        return "%ACK_" + str(opCode) + "%=";
 
