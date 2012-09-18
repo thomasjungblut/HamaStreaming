@@ -59,7 +59,7 @@ class BSPPeer:
         line = readLine()
         # if no message is send it will send %%-1%%
         if line == "%%-1%%":
-            return -1
+            return False
 
         return line;
 
@@ -125,7 +125,7 @@ class BSPPeer:
         secondLine = readLine()
         # if no message is send it will send %%-1%%
         if line == "%%-1%%" and secondLine == "%%-1%%":
-            return -1
+            return False
         return [line, secondLine]
 
     def reopenInput(self):
