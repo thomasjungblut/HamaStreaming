@@ -58,7 +58,7 @@ class KMeansBSP(BSP):
         lowest = float("inf")
         for i in range(self.numCenters):
             dist = self.distance(vector, self.centers[i])
-            if lowest < dist:
+            if lowest > dist:
                 lowest = dist
                 lowestIndex = i
         return lowestIndex
@@ -71,7 +71,7 @@ class KMeansBSP(BSP):
             newCenterArray[lowestCenterIndex] = center
             summationCount[lowestCenterIndex] = 0
         else:
-            self.sum(newCenterArray[lowestCenterIndex], vector)
+            newCenterArray[lowestCenterIndex] = self.sum(newCenterArray[lowestCenterIndex], vector)
             summationCount[lowestCenterIndex] += 1
 
 
@@ -118,7 +118,7 @@ class KMeansBSP(BSP):
             line = peer.readNext()
             if not line: break
             lowestDistantCenter = self.getNearestCenter(self.toVector(line[1]))
-            peer.write(str(lowestDistantCenter), self.centers[lowestDistantCenter])
+            peer.write(str(lowestDistantCenter), line[1])
 
         pass
 
