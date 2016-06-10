@@ -30,7 +30,14 @@ class BinaryProtocol:
     TASK_DONE = 22
     REGISTER_COUNTER = 23
     INCREMENT_COUNTER = 24
-    LOG = 25
+    SEQFILE_OPEN = 25
+    SEQFILE_READNEXT = 26
+    SEQFILE_APPEND = 27
+    SEQFILE_CLOSE = 28
+    PARTITION_REQUEST = 29
+    PARTITION_RESPONSE = 30
+    LOG = 31
+    END_OF_DATA = 32
 
     @staticmethod
     def getProtocolString(opCode):

@@ -131,7 +131,7 @@ class BSPPeer:
     def reopenInput(self):
         println(bp.getProtocolString(bp.REOPEN_INPUT))
 
-    # TODO counter!
+    # TODO counters, seq writes and partitioning
 
     def runSetup(self):
         line = readLine()
